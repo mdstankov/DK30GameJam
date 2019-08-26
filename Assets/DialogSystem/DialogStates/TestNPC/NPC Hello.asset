@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a503e4ae60021674ba89b0d34cf9c2bd, type: 3}
+  m_Name: NPC Hello
+  m_EditorClassIdentifier: 
+  stateText: '"Hello mr9  {car_color}"
+
+'
+  sound: {fileID: 0}
+  TriggersFlags: 
+  responces:
+  - ResponceText: 'Stare at her '
+    NextState: {fileID: 11400000, guid: dc293f87b20b27f4fb24072dfd4520c2, type: 2}
+    RequiresStoryFlag: 01000000
+    RequiresObjectFlag: 02000000
+    EndDialog: 0
+    TimeCost: 0
+  - ResponceText: Leave
+    NextState: {fileID: 0}
+    RequiresStoryFlag: 
+    RequiresObjectFlag: 
+    EndDialog: 1
+    TimeCost: 0
+  - ResponceText: CAR SELF FLAG CHECK
+    NextState: {fileID: 0}
+    RequiresStoryFlag: 
+    RequiresObjectFlag: 01000000
+    EndDialog: 1
+    TimeCost: 0
