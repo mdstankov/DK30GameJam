@@ -12,9 +12,20 @@ public class CarScript : MonoBehaviour
 
     [SerializeField] public Transform ToSpawnOfficerNode;
 
-     void Start( )
+	[SerializeField] public Material MaterialPurple;
+	[SerializeField] public Material MaterialBlue;
+	[SerializeField] public Material MaterialYellow;
+	   
+	[SerializeField] Renderer ChildRenderer = null;
+
+	void Awake( )
 	{
-        SetRandomColor( );
+		 SetRandomColor( );
+	}
+
+    void Start( )
+	{
+       
     }
 
 	public bool GetIsCorrectCar( )
@@ -31,17 +42,31 @@ public class CarScript : MonoBehaviour
 		Debug.Log( "DayCar is " + gameObject.name );
 	}
 
-    public void SpawnPoliceOfficerNextToCar( )
+    public Transform PoliceOfficerSpawnTransform( )
     {
-        //TODO:
-        
-
+		return ToSpawnOfficerNode;
     }
 
     public void SetRandomColor( )
     {
         //TODO:
+		int random = Random.Range(0, 3);
 
+		if( random == 0 ) // Yellow
+		{
+			ColorType = CarColors.Yellow;
+			ChildRenderer.material = MaterialYellow;
+		}
+		else if( random == 1 ) // Blue
+		{
+			ColorType = CarColors.Blue;
+			ChildRenderer.material = MaterialBlue;
+		}
+		else // Purple
+		{
+			ColorType = CarColors.Purple;
+			ChildRenderer.material = MaterialPurple;
+		}	
 
     }
 

@@ -16,18 +16,18 @@ public struct DialogResponceStruct
     [SerializeField] public Dialog_State NextState;
     [SerializeField] public FlagResponceStruct[] RequiresStory;
 	[SerializeField] public FlagResponceStruct[] RequiresObject;
-    
-    [SerializeField] public bool EndDialog;
-    [SerializeField] public float TimeCost;    
+    [SerializeField] public float TimeCost;   
+    [SerializeField] public bool EndDialog;     
 }
 
 [CreateAssetMenu(menuName = "Dialog State")]
 public class Dialog_State : ScriptableObject
 {
     [TextArea(7,5)] [SerializeField] string stateText = "";
-    [SerializeField] AudioClip Sound;
-    [SerializeField] StoryFlag[] TriggersFlags;
-    [SerializeField] public SpecialEvent Special;
+    [SerializeField] AudioClip Sound = null;
+    [SerializeField] public StoryFlag[] StoryFlags;
+	[SerializeField] public StoryFlag[] ObjectFlags;
+    [SerializeField] public SpecialEvent Special = SpecialEvent.None;
 
     [SerializeField] DialogResponceStruct[] responces = null; 
     [SerializeField] public bool hideMissingRequirements = false;

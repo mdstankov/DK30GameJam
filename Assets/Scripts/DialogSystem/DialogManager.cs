@@ -30,8 +30,7 @@ public class DialogManager : MonoBehaviour
 		Debug.Log( "Start Conversation called" );
 		gameObject.SetActive( true );
 		
-		m_CurrentInteraction = intercation_object;
-		
+		m_CurrentInteraction = intercation_object;	
 
         if( state == null )
 		{
@@ -48,10 +47,14 @@ public class DialogManager : MonoBehaviour
 
     public void EndConversation( )
 	{
+		if( m_CurrentInteraction )
+			m_CurrentInteraction = null;
+
+		if( m_CurrentState )
+			m_CurrentState = null;
+
 		Cursor.lockState = CursorLockMode.Confined;
-
 		PlayerController player = (PlayerController)FindObjectOfType(typeof(PlayerController));
-
 		player.OnResumepGame( );
 
 		gameObject.SetActive( false );		
@@ -64,12 +67,24 @@ public class DialogManager : MonoBehaviour
 		string state_text = m_GameState.FormatTagString( m_CurrentState.GetStateText( ) ); 
 		DialogTextUI.text = state_text;
 		//TODO:SetFlags
+		
+		foreach( StoryFlag flag in m_CurrentState.StoryFlags )
+		{
+			m_GameState.SetStoryFlag( flag );
+
+		}
+
+		foreach( StoryFlag flag in m_CurrentState.ObjectFlags )
+		{
+			m_CurrentInteraction.AddFlag( flag );
+		}
+
 
 		///////////////////////////////////////
         DialogResponceStruct[] stateResponces = m_CurrentState.GetAllResponces( );
-
 		int btn_id = 0;
-        foreach(DialogResponceStruct responce in stateResponces )  
+
+        foreach( DialogResponceStruct responce in stateResponces )  
         {          
 			Button btn = DialogButtonsUI[btn_id];
 			Assert.IsNotNull( btn , "UI BUTTON IS NULL" );
@@ -86,8 +101,7 @@ public class DialogManager : MonoBehaviour
 				else
 				{
 					text_component.text = ( 1 + btn_id ).ToString( ) + ". <Missing Requirements>";
-				}
-				
+				}				
 			}
 			else
 			{ 	
@@ -108,9 +122,13 @@ public class DialogManager : MonoBehaviour
 		for( ; btn_id < DialogButtonsUI.Length ; btn_id++ )
 		{
 			DialogButtonsUI[btn_id].gameObject.SetActive( false );
-		}			   
-	}
-		   
+		}		
+		
+		if( m_CurrentState.Special != SpecialEvent.None )
+		{
+			m_GameState.OnSpecialEvent( m_CurrentState.Special );
+		}
+	}		   
 	void OnResponceButtonClicked( DialogResponceStruct responce )
 	{				
 		if( responce.TimeCost > 0 )				
@@ -130,17 +148,24 @@ public class DialogManager : MonoBehaviour
 	{
 		foreach( FlagResponceStruct responce_struct in responce.RequiresStory )
 		{		
-			if( m_GameState.HasStoryFlag(responce_struct.Flag ) != responce_struct.HasToBeFalse )
+			bool has_flag = m_GameState.HasStoryFlag(responce_struct.Flag );
+			bool expect_true = !responce_struct.HasToBeFalse;
+
+			if( ( has_flag == true && expect_true == false ) || ( has_flag == false && expect_true == true ) )
 			{
-				//Debug.Log( "Missing story flag: " + flag.ToString( ) );
+				//Debug.Log( "Missing story flag: " + responce_struct.Flag.ToString( ) );
 				return false;
 			}
 		}
 
         foreach (FlagResponceStruct responce_struct in responce.RequiresObject)
 		{
-            if  (m_CurrentInteraction.HasFlag(responce_struct.Flag) != responce_struct.HasToBeFalse)
+			bool has_flag =  m_CurrentInteraction.HasFlag(responce_struct.Flag);
+			bool expect_true = !responce_struct.HasToBeFalse;
+
+            if( ( has_flag == true && expect_true == false ) || ( has_flag == false && expect_true == true ) )
             {
+				//Debug.Log( "Missing object flag: " + responce_struct.Flag.ToString( ) );
 				return false;
 			}
 		}

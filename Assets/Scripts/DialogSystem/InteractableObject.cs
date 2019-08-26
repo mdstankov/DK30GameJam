@@ -42,7 +42,7 @@ public class InteractableObject : MonoBehaviour
 			Vector3 targetDir = Camera.main.transform.position - transform.position;
 			targetDir.y = 0;
 			//targetDir.z = 0;
-			float step = 2.0f * Time.deltaTime;
+			float step = 5.0f * Time.deltaTime;
 			Vector3 newDir = Vector3.RotateTowards( m_Rotator.transform.forward * -1, targetDir , step, 0.0f );			
 			
 			m_Rotator.transform.rotation = Quaternion.LookRotation( newDir * -1 );			

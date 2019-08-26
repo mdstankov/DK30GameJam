@@ -10,19 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a503e4ae60021674ba89b0d34cf9c2bd, type: 3}
-  m_Name: Car 01 Fail
+  m_Name: Car 02 Success
   m_EditorClassIdentifier: 
-  stateText: 'This appears to not be your car
-
-
-'
-  sound: {fileID: 0}
-  TriggersFlags: 
-  responces:
-  - ResponceText: Leave
-    NextState: {fileID: 0}
-    RequiresStory: []
-    RequiresObject: []
-    EndDialog: 1
-    TimeCost: 0
+  stateText: 
+  Sound: {fileID: 0}
+  StoryFlags: 
+  ObjectFlags: 
+  Special: 3
+  responces: []
   hideMissingRequirements: 0

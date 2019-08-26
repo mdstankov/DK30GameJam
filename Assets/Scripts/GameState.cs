@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public enum StoryFlag
 {
@@ -9,48 +10,41 @@ public enum StoryFlag
     car_location = 1 << 1,
     police_at_car = 1 << 2,
     police_called = 1 << 3,
-    cop_car_clear = 1 << 4,
+    cop_clear = 1 << 4,
     car_inspected = 1 << 5,
     car_correct = 1 << 6,
 }
 
 public enum SpecialEvent
 {
+	None,
     Spawn_Cop,
+	Cop_Stone,
     Game_Won,
     Game_Lost,
 
 }
 
-public enum Levels
-{
-    Lobby,
-    Introduction,
-    Game,
-    WinScreen,
-    LoseScreen,
-}
-
-
 public enum CarLocations
 {
-	Unknown,
-	LocalStore,
-	Club,
-	MLG_Arena,
+	Unknown = 0,
+	LocalStore = 1,
+	Club = 2,
+	MLG_Arena = 3,
 }
 
 public enum CarColors
 {
 	Unknown,
-	Red,
-	Green,
 	Yellow,
-	White,
+	Purple,
+	Blue,
 }
 
 public class GameState : MonoBehaviour
 {
+	[SerializeField] GameObject CopPrefab = null;
+
 	float LevelTimer = 9.0f * 60.0f;
 	bool isTimerPaused = true;
 		 
@@ -63,8 +57,8 @@ public class GameState : MonoBehaviour
 	private CarColors m_CarColor = CarColors.Unknown;
 	private CarLocations m_CarLocation = CarLocations.Unknown;
     private CarScript m_CorrectCar = null;
+	private GameObject CopObject = null;
     
-
     void Start( )
     {
 		GameObject prefab = Instantiate( DialogPrefab, new Vector3( 0, 0, 0 ) , Quaternion.identity ) as GameObject;
@@ -75,6 +69,9 @@ public class GameState : MonoBehaviour
 		}
 
 		GenerateRandomCarGoal( );
+
+		OnSpecialEvent( SpecialEvent.Spawn_Cop );
+		OnSpecialEvent( SpecialEvent.Cop_Stone );
     }
     // Update is called once per frame
     void Update()
@@ -124,17 +121,56 @@ public class GameState : MonoBehaviour
             //TODO;
             SetStoryFlag(StoryFlag.police_at_car);
 
+			if( CopPrefab && m_CorrectCar )
+			{
+
+				Transform transform = m_CorrectCar.PoliceOfficerSpawnTransform( );
+				CopObject = Instantiate( CopPrefab, transform.position , transform.rotation ) as GameObject;
+
+			}
+
             return;
         }
+		else if( e == SpecialEvent.Cop_Stone )
+		{
+			if( CopObject )
+			{
+				GameObject model = CopObject.transform.Find("Model").gameObject;
+				if( model )
+				{
+					model.transform.Rotate( 90 , 0 , 0 );
+				}
+				
+			}
+			return;
+		}
         else if (e == SpecialEvent.Game_Won)
         {
-            //TODO:
+			if( m_DialogManager )
+			{
+				m_DialogManager.EndConversation( );
+			}
 
+            PlayerController player = (PlayerController)FindObjectOfType(typeof(PlayerController));
+			if( player )
+			{
+				player.StartGameWon( );
+			}
+			return;
         }
         else if (e == SpecialEvent.Game_Lost )
         {
-            //TODO:
+			if( m_DialogManager )
+			{
+				m_DialogManager.EndConversation( );
+			}
 
+            PlayerController player = (PlayerController)FindObjectOfType(typeof(PlayerController));
+			if( player )
+			{
+				player.StartGameLost( );
+			}
+			return;
         }
 
         Debug.LogError("Special Event not handled" + e.ToString());
@@ -155,17 +191,14 @@ public class GameState : MonoBehaviour
 	{
 		switch ( m_CarColor )
         {
-			case CarColors.Green:
-				return "green";
-
-			case CarColors.Red:
-				return "red";
-
-			case CarColors.White:
-				return "white";
-
 			case CarColors.Yellow:
-				return "yellow";
+				return "Yellow";
+
+			case CarColors.Blue:
+				return "Blue";
+
+			case CarColors.Purple:
+				return "Purple";
 
 			default:
 				return "unknown";
@@ -193,8 +226,10 @@ public class GameState : MonoBehaviour
 	//--------------
 	public void SetStoryFlag( StoryFlag flag )
 	{
-	 Debug.Log( "Story flag set: " + flag.ToString( ) );
-	   m_StoryFlags = SetFlag( m_StoryFlags , flag );
+		if( HasStoryFlag ( flag) ) { return; }
+
+		Debug.Log( "Story flag set: " + flag.ToString( ) );
+		m_StoryFlags = SetFlag( m_StoryFlags , flag );
 	}
 
 	//  public void UnsetStoryFlag( StoryFlag flag )
@@ -241,7 +276,7 @@ public class GameState : MonoBehaviour
 	void GenerateRandomCarGoal( )
 	{
 		//Pick random car location
-		m_CarLocation = CarLocations.LocalStore;
+		m_CarLocation = (CarLocations)Random.Range( 1, 4 );
 		
 		//Find all object Tagged Car in the level
 

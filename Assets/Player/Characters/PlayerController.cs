@@ -113,8 +113,27 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				Debug.LogError( "MISSING PLAYER HUD CONTROLLER" );
 			}
 
+			StartIntoduction( );
 
         }
+		private void StartIntoduction( ) //Bad place for these functions
+		{
+			OnPauseGame( true );
+			m_PlayerHud.SetIntroScreen( true );
+		}
+
+		public void StartGameWon( ) //Bad place for these functions
+		{
+			
+			OnPauseGame( true );
+			m_PlayerHud.SetWinScreen( true );
+		}
+
+		public void StartGameLost( ) //Bad place for these functions
+		{
+			OnPauseGame( true );
+			m_PlayerHud.SetLoseScreen( true );
+		}
 
         private void Update()
         {

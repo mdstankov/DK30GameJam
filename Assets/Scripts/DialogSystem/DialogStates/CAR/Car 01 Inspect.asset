@@ -10,35 +10,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a503e4ae60021674ba89b0d34cf9c2bd, type: 3}
-  m_Name: Car 00 Inspect
+  m_Name: Car 01 Inspect
   m_EditorClassIdentifier: 
-  stateText: 'This appears to be a car
-
-
-'
-  sound: {fileID: 0}
-  TriggersFlags: 
+  stateText: 'At closer look its definetly a car. But it might need closer inspection
+    to determined if its actually yours. '
+  Sound: {fileID: 0}
+  StoryFlags: 
+  ObjectFlags: 
+  Special: 0
   responces:
-  - ResponceText: Inspect Car
-    NextState: {fileID: 11400000, guid: 9616dbc0e2a3e2943949bd61ad3a4f70, type: 2}
+  - ResponceText: Inspect the car
+    NextState: {fileID: 11400000, guid: 3d814108c24068042b13fb1321608c7b, type: 2}
     RequiresStory: []
     RequiresObject:
-    - Flag: 1
+    - Flag: 64
       HasToBeFalse: 1
+    TimeCost: 0
     EndDialog: 0
-    TimeCost: 20
-  - ResponceText: Inspect Car
-    NextState: {fileID: 11400000, guid: 55a4a459a64b38b4c85d7ef6bff0ef15, type: 2}
+  - ResponceText: Inspect the car
+    NextState: {fileID: 11400000, guid: 9924d70bc9f7b0c4f96b10c56cbd0864, type: 2}
     RequiresStory: []
     RequiresObject:
-    - Flag: 1
+    - Flag: 64
       HasToBeFalse: 0
+    TimeCost: 0
     EndDialog: 0
-    TimeCost: 20
   - ResponceText: Leave
     NextState: {fileID: 0}
     RequiresStory: []
     RequiresObject: []
-    EndDialog: 1
     TimeCost: 0
-  hideMissingRequirements: 1
+    EndDialog: 1
+  hideMissingRequirements: 0
