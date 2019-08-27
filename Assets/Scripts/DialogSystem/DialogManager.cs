@@ -96,8 +96,7 @@ public class DialogManager : MonoBehaviour
 		{
 			m_CurrentInteraction.AddFlag( flag );
 		}
-
-
+		
 		///////////////////////////////////////
         DialogResponceStruct[] stateResponces = m_CurrentState.GetAllResponces( );
 		int btn_id = 0;
@@ -127,7 +126,7 @@ public class DialogManager : MonoBehaviour
 
 				if( responce.TimeCost > 0 )				
 				{
-					responce_string = responce_string + " (-" +(responce.TimeCost ).ToString( ) + " sec.)";
+					responce_string = responce_string + "  ( -" +(responce.TimeCost ).ToString( ) + " sec.)";
 				}
 				
 				text_component.text = responce_string;				
@@ -152,18 +151,17 @@ public class DialogManager : MonoBehaviour
 		if( responce.TimeCost > 0 )				
 			m_GameState.ChangeTime( -responce.TimeCost );
 
-		if( responce.EndDialog == true || responce.NextState == null )
-		{
-			EndConversation( );
-			return;
-		}
-
 		if( responce.ReplaceStartState != null && m_CurrentInteraction )
 		{
 			m_CurrentInteraction.OnReplaceStartingState( responce.ReplaceStartState );
 		}
 
-		Debug.Log( responce.NextState.name );
+		if( responce.EndDialog == true || responce.NextState == null )
+		{
+			EndConversation( );
+			return;
+		}		
+
 		SetupState( responce.NextState );
 	}
 

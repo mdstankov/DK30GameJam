@@ -12,10 +12,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a503e4ae60021674ba89b0d34cf9c2bd, type: 3}
   m_Name: Manfred 00
   m_EditorClassIdentifier: 
-  stateText: 
+  stateText: The big soft stuffed bunny radiates with love and care.
   Sound: {fileID: 0}
   StoryFlags: 
   ObjectFlags: 
   Special: 0
-  responces: []
+  responces:
+  - ResponceText: 'Pray to manfried for answers. ( Learn Car Location ) '
+    NextState: {fileID: 11400000, guid: a7ae0262bde5d7f46bbbf3326133e99e, type: 2}
+    RequiresStory: []
+    RequiresObject: []
+    TimeCost: 240
+    ReplaceStartState: {fileID: 11400000, guid: 202b14fcdd633bb439676b005808e7db,
+      type: 2}
+    EndDialog: 0
+  - ResponceText: Pray to manfried for answers. ( Learn Car Color )
+    NextState: {fileID: 11400000, guid: a898598a03848364bbea71684a79dea3, type: 2}
+    RequiresStory: []
+    RequiresObject: []
+    TimeCost: 240
+    ReplaceStartState: {fileID: 11400000, guid: 202b14fcdd633bb439676b005808e7db,
+      type: 2}
+    EndDialog: 0
+  - ResponceText: Leave.
+    NextState: {fileID: 0}
+    RequiresStory: []
+    RequiresObject: []
+    TimeCost: 0
+    ReplaceStartState: {fileID: 0}
+    EndDialog: 1
   hideMissingRequirements: 0

@@ -19,7 +19,7 @@ public enum SpecialEvent
 {
 	None,
     Spawn_Cop,
-	Cop_Stone,
+	Cop_Clear,
     Game_Won,
     Game_Lost,
 
@@ -69,9 +69,6 @@ public class GameState : MonoBehaviour
 		}
 
 		GenerateRandomCarGoal( );
-
-		OnSpecialEvent( SpecialEvent.Spawn_Cop );
-		OnSpecialEvent( SpecialEvent.Cop_Stone );
     }
     // Update is called once per frame
     void Update()
@@ -150,7 +147,7 @@ public class GameState : MonoBehaviour
 
             return;
         }
-		else if( e == SpecialEvent.Cop_Stone )
+		else if( e == SpecialEvent.Cop_Clear )
 		{
 			if( CopObject )
 			{
@@ -211,13 +208,13 @@ public class GameState : MonoBehaviour
 		switch ( m_CarColor )
         {
 			case CarColors.Yellow:
-				return "Yellow";
+				return "YELLOW";
 
 			case CarColors.Blue:
-				return "Blue";
+				return "BLUE";
 
 			case CarColors.Purple:
-				return "Purple";
+				return "PURPLE";
 
 			default:
 				return "unknown";
@@ -228,14 +225,14 @@ public class GameState : MonoBehaviour
 	{
 		switch ( m_CarLocation )
         {
-			case CarLocations.Unknown:
-				return "unknown";
+			case CarLocations.LocalStore:
+				return "MOSTLY SHOPPING STORE";
 
 			case CarLocations.Club:
-				return "at the store";
+				return "FUNDAY MONDAY CLUB";
 
 			case CarLocations.MLG_Arena:
-				return "MLG Arena";
+				return "MLG STADIUM ";
 
 			default:
 				return "unknown";
@@ -296,7 +293,7 @@ public class GameState : MonoBehaviour
 	{
 		//Pick random car location
 		m_CarLocation = (CarLocations)Random.Range( 1, 4 );
-		
+		Debug.Log( "Car Location is " + m_CarLocation.ToString( ) );
 		//Find all object Tagged Car in the level
 
 		List<GameObject> Cars = new List<GameObject>( );

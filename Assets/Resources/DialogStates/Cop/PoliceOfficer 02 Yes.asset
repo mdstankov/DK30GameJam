@@ -10,28 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a503e4ae60021674ba89b0d34cf9c2bd, type: 3}
-  m_Name: Fan 00
+  m_Name: PoliceOfficer 02 Yes
   m_EditorClassIdentifier: 
-  stateText: '"OMG YOU''RE DAY9! THE DAY9!"'
+  stateText: 'There is a bright flash of light. Next thing you realize the police
+    officer has fallen unconscious. '
   Sound: {fileID: 0}
-  StoryFlags: 
+  StoryFlags: 10000000
   ObjectFlags: 
-  Special: 0
+  Special: 2
   responces:
-  - ResponceText: Stay frozen in place.
-    NextState: {fileID: 11400000, guid: 2a7c0bca5319bfa4eab30ce563110dbe, type: 2}
-    RequiresStory: []
-    RequiresObject: []
-    TimeCost: 5
-    ReplaceStartState: {fileID: 11400000, guid: 2a7c0bca5319bfa4eab30ce563110dbe,
-      type: 2}
-    EndDialog: 0
-  - ResponceText: Run Away!
+  - ResponceText: Continue.
     NextState: {fileID: 0}
     RequiresStory: []
     RequiresObject: []
-    TimeCost: 15
-    ReplaceStartState: {fileID: 11400000, guid: 2a7c0bca5319bfa4eab30ce563110dbe,
+    TimeCost: 0
+    ReplaceStartState: {fileID: 11400000, guid: d5e6d5ecd9c36f64a84378dfc64fb1ff,
       type: 2}
     EndDialog: 1
   hideMissingRequirements: 0

@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a503e4ae60021674ba89b0d34cf9c2bd, type: 3}
-  m_Name: Civilian 00
+  m_Name: Civilian 01
   m_EditorClassIdentifier: 
-  stateText: '"CLEM!" ( Warframe refecene, you should totally play Warframe with us!
-    <3 )
+  stateText: '"CLEM?" ( No seriously go play Warframe )
 
 '
   Sound: {fileID: 0}
@@ -21,32 +20,33 @@ MonoBehaviour:
   ObjectFlags: 
   Special: 0
   responces:
-  - ResponceText: '"Uniden!?" '
-    NextState: {fileID: 11400000, guid: 6fe5975726dc41b4ea2471c7e931db89, type: 2}
+  - ResponceText: '"Remind me to tell you a story about kittens"'
+    NextState: {fileID: 11400000, guid: c0a5cb542bc522e40b75aa2288ca5727, type: 2}
     RequiresStory: []
     RequiresObject: []
-    TimeCost: 0
+    TimeCost: 1
     ReplaceStartState: {fileID: 0}
     EndDialog: 0
-  - ResponceText: '"Build Pylons, build Probes, build Pylons, build Probes..."'
-    NextState: {fileID: 11400000, guid: 6fe5975726dc41b4ea2471c7e931db89, type: 2}
+  - ResponceText: '"Dude, where is my car?"'
+    NextState: {fileID: 11400000, guid: c0a5cb542bc522e40b75aa2288ca5727, type: 2}
     RequiresStory: []
     RequiresObject: []
-    TimeCost: 0
+    TimeCost: 1
     ReplaceStartState: {fileID: 0}
     EndDialog: 0
-  - ResponceText: '"How do I use THE ROPE"'
-    NextState: {fileID: 11400000, guid: 6fe5975726dc41b4ea2471c7e931db89, type: 2}
+  - ResponceText: Clem!
+    NextState: {fileID: 11400000, guid: c0a5cb542bc522e40b75aa2288ca5727, type: 2}
     RequiresStory: []
     RequiresObject: []
-    TimeCost: 0
+    TimeCost: 1
     ReplaceStartState: {fileID: 0}
     EndDialog: 0
-  - ResponceText: Leave
-    NextState: {fileID: 11400000, guid: 6fe5975726dc41b4ea2471c7e931db89, type: 2}
+  - ResponceText: Leave.
+    NextState: {fileID: 11400000, guid: c0a5cb542bc522e40b75aa2288ca5727, type: 2}
     RequiresStory: []
     RequiresObject: []
-    TimeCost: 0
-    ReplaceStartState: {fileID: 11400000}
+    TimeCost: 1
+    ReplaceStartState: {fileID: 11400000, guid: c0a5cb542bc522e40b75aa2288ca5727,
+      type: 2}
     EndDialog: 1
   hideMissingRequirements: 0

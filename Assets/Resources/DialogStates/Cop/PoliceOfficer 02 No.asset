@@ -10,28 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a503e4ae60021674ba89b0d34cf9c2bd, type: 3}
-  m_Name: Fan 00
+  m_Name: PoliceOfficer 02 No
   m_EditorClassIdentifier: 
-  stateText: '"OMG YOU''RE DAY9! THE DAY9!"'
+  stateText: '"Yeah, but no. There is paperwork to be done beforehand, it would only
+    take like 5 min"'
   Sound: {fileID: 0}
   StoryFlags: 
   ObjectFlags: 
   Special: 0
   responces:
-  - ResponceText: Stay frozen in place.
-    NextState: {fileID: 11400000, guid: 2a7c0bca5319bfa4eab30ce563110dbe, type: 2}
+  - ResponceText: Do the paperwork.
+    NextState: {fileID: 11400000, guid: 4fc549e021d306846a359113b66cf937, type: 2}
     RequiresStory: []
     RequiresObject: []
-    TimeCost: 5
-    ReplaceStartState: {fileID: 11400000, guid: 2a7c0bca5319bfa4eab30ce563110dbe,
-      type: 2}
+    TimeCost: 300
+    ReplaceStartState: {fileID: 0}
     EndDialog: 0
-  - ResponceText: Run Away!
-    NextState: {fileID: 0}
+  - ResponceText: Pull out your Mono-white deck!
+    NextState: {fileID: 11400000, guid: e6f26215d8f5218468f6e032eda8bac1, type: 2}
     RequiresStory: []
     RequiresObject: []
-    TimeCost: 15
-    ReplaceStartState: {fileID: 11400000, guid: 2a7c0bca5319bfa4eab30ce563110dbe,
-      type: 2}
-    EndDialog: 1
+    TimeCost: 0
+    ReplaceStartState: {fileID: 0}
+    EndDialog: 0
   hideMissingRequirements: 0
