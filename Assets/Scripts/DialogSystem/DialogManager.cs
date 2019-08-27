@@ -5,7 +5,8 @@ using UnityEditor;
 using UnityEngine.UI;
 using UnityEngine.Assertions;
 using UnityStandardAssets.Characters.FirstPerson;
-
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 public class DialogManager : MonoBehaviour
 {
@@ -19,8 +20,24 @@ public class DialogManager : MonoBehaviour
 	
 	private InteractableObject m_CurrentInteraction = null;
 
-    void Start( )
-    {
+	private PlayerController m_Player = null;
+	private SaveDialogProgress m_Save = null;
+
+	private int m_TotalDialogsIngame = 0;
+
+	private void Awake()
+	{
+		m_Player = (PlayerController)FindObjectOfType(typeof(PlayerController));
+		CheckInitialSaveData( );
+	}
+
+	void Start( )
+    {		
+		if( m_Player )
+		{
+			m_Player.UpdateStoryProgressHUD( m_Save.RegisteredDialogs.Count , m_TotalDialogsIngame );
+		}
+
 		gameObject.SetActive( false );
 		m_GameState = (GameState)FindObjectOfType(typeof(GameState)); //TODO: Double Dependancy
     }
@@ -54,8 +71,8 @@ public class DialogManager : MonoBehaviour
 			m_CurrentState = null;
 
 		Cursor.lockState = CursorLockMode.Confined;
-		PlayerController player = (PlayerController)FindObjectOfType(typeof(PlayerController));
-		player.OnResumepGame( );
+		
+		m_Player.OnResumepGame( );
 
 		gameObject.SetActive( false );		
 	}
@@ -63,6 +80,7 @@ public class DialogManager : MonoBehaviour
 	void SetupState( Dialog_State state )
 	{		
 		m_CurrentState = state;
+		CheckSaveProgresss( state.ToString( ) );
 
 		string state_text = m_GameState.FormatTagString( m_CurrentState.GetStateText( ) ); 
 		DialogTextUI.text = state_text;
@@ -140,6 +158,11 @@ public class DialogManager : MonoBehaviour
 			return;
 		}
 
+		if( responce.ReplaceStartState != null && m_CurrentInteraction )
+		{
+			m_CurrentInteraction.OnReplaceStartingState( responce.ReplaceStartState );
+		}
+
 		Debug.Log( responce.NextState.name );
 		SetupState( responce.NextState );
 	}
@@ -172,4 +195,64 @@ public class DialogManager : MonoBehaviour
 
 		return true;
 	}    
+
+	void CheckInitialSaveData( )
+	{
+		Dialog_State[] all_states = GetAllInstances<Dialog_State>(  "Scripts/DialogSystem/DialogStates" );
+
+		m_TotalDialogsIngame = all_states.Length;
+		Debug.Log( all_states.Length );
+
+		//Check for save game file exists
+
+		if ( File.Exists(Application.persistentDataPath + "/gamesave.save"))
+		{	  
+			BinaryFormatter bf = new BinaryFormatter( );
+			FileStream file = File.Open(Application.persistentDataPath + "/gamesave.save", FileMode.Open);
+			m_Save = (SaveDialogProgress)bf.Deserialize(file);
+			file.Close( );
+		}
+		else
+		{
+			m_Save = new SaveDialogProgress( );
+		}
+
+		if( m_Player )
+		{
+			m_Player.UpdateStoryProgressHUD( m_Save.RegisteredDialogs.Count , m_TotalDialogsIngame );
+		}	   		 
+	}
+
+	void CheckSaveProgresss( string current_state )
+	{
+		if( m_Save.RegisteredDialogs.Contains( current_state ) ) {	return;	}
+
+		m_Save.RegisteredDialogs.Add( current_state );
+		if( m_Player )
+		{
+			m_Player.UpdateStoryProgressHUD( m_Save.RegisteredDialogs.Count , m_TotalDialogsIngame );
+		}
+
+
+		BinaryFormatter bf = new BinaryFormatter();
+		FileStream file = File.Create(Application.persistentDataPath + "/gamesave.save");
+		bf.Serialize(file, m_Save);
+		file.Close( );
+	}
+	
+	public static T[] GetAllInstances<T>( string base_path ) where T : ScriptableObject
+	{
+	    string[] guids = AssetDatabase.FindAssets("t:"+ typeof(T).Name, new[] {"Assets/" + base_path} ) ;  //FindAssets uses tags check documentation for more info
+	    T[] a = new T[guids.Length];
+	    for(int i =0;i<guids.Length;i++)         //probably could get optimized 
+	    {
+	        string path = AssetDatabase.GUIDToAssetPath(guids[i]);
+	        a[i] = AssetDatabase.LoadAssetAtPath<T>(path);
+	    }
+	
+	    return a;
+	
+	}
+
+
 }

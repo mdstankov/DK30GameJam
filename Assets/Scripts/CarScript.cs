@@ -39,7 +39,7 @@ public class CarScript : MonoBehaviour
 
 		InteractableObject interaction = GetComponent<InteractableObject>( );
 		interaction.AddFlag( StoryFlag.car_correct );
-		Debug.Log( "DayCar is " + gameObject.name );
+		Debug.Log( "DayCar is " + gameObject.name + " " + ColorType.ToString( ) + " " + LocationType.ToString( ) );
 	}
 
     public Transform PoliceOfficerSpawnTransform( )

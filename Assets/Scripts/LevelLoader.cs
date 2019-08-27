@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -24,9 +26,10 @@ public class LevelLoader : MonoBehaviour
         
     }
 
-	public void LoadGameLevel( )
+	public void StartGame( )
 	{
-		SceneManager.LoadScene("GameLevel");
+		SceneManager.LoadScene( "3D Test Scene" );
+		//SceneManager.LoadScene("GameLevel");
 	}
 	
 	public void LoadLevel( Levels level )
@@ -50,5 +53,16 @@ public class LevelLoader : MonoBehaviour
     {
         Application.Quit();
     }
+
+	public void ResetSaveProgress( )
+	{		
+		SaveDialogProgress blank_save = new SaveDialogProgress( );
+		BinaryFormatter bf = new BinaryFormatter();
+		FileStream file = File.Create(Application.persistentDataPath + "/gamesave.save");
+		bf.Serialize(file, blank_save);
+		file.Close( );
+	}
+
+
 }
 

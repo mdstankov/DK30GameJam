@@ -69,6 +69,17 @@ public class InteractableObject : MonoBehaviour
 		return false;
     }
 
+	public void OnReplaceStartingState( Dialog_State new_state )
+	{
+		if( m_StartingState == new_state )
+		{
+			Debug.Log( "This state is already set for starting state!");
+			return;
+		}
+		m_StartingState = new_state;
+	}
+
+
 	public void OnFocusGained( )
 	{	
 		isFocused = true;

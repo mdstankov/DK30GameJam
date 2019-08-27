@@ -17,6 +17,7 @@ public struct DialogResponceStruct
     [SerializeField] public FlagResponceStruct[] RequiresStory;
 	[SerializeField] public FlagResponceStruct[] RequiresObject;
     [SerializeField] public float TimeCost;   
+	[SerializeField] public Dialog_State ReplaceStartState;
     [SerializeField] public bool EndDialog;     
 }
 

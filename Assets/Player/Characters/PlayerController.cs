@@ -97,24 +97,25 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
 
-        private void Start()
+		private void Awake()
+		{
+			GameObject prefab = Instantiate( PlayerHudPrefab, new Vector3(0, 0, 0), Quaternion.identity ) as GameObject;	
+			m_PlayerHud = prefab.GetComponent<PlayerHudController>( );
+			if( m_PlayerHud == null )
+			{
+				Debug.LogError( "MISSING PLAYER HUD CONTROLLER" );
+			}
+		}
+
+		private void Start()
         {
             m_RigidBody = GetComponent<Rigidbody>();
             m_Capsule = GetComponent<CapsuleCollider>( );
             mouseLook.Init ( transform, cam.transform );
 
 			m_GameState = (GameState)FindObjectOfType(typeof(GameState));
-			Assert.IsNotNull( m_GameState , "GameState is null" );
-
-			GameObject prefab = Instantiate( PlayerHudPrefab, new Vector3(0, 0, 0), Quaternion.identity ) as GameObject;
-			m_PlayerHud = prefab.GetComponent<PlayerHudController>( );
-			if( m_PlayerHud == null )
-			{
-				Debug.LogError( "MISSING PLAYER HUD CONTROLLER" );
-			}
-
+			Assert.IsNotNull( m_GameState , "GameState is null" );					
 			StartIntoduction( );
-
         }
 		private void StartIntoduction( ) //Bad place for these functions
 		{
@@ -202,6 +203,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			Cursor.visible = false;
 		}
 
+		public void UpdateStoryProgressHUD( int unlocked , int total )
+		{
+			if( m_PlayerHud )
+			{
+				m_PlayerHud.UpdateDialogProgress( unlocked , total );
+			}
+		}
 		void LookForInteractable( )
 		{
 			float interactionDistance = 4f;			

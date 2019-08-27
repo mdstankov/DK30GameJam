@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a503e4ae60021674ba89b0d34cf9c2bd, type: 3}
+  m_Name: Test Start
+  m_EditorClassIdentifier: 
+  dialogId: 101
+  stateText: Test NPC looks at you
+  sound: {fileID: 0}
+  TriggersFlags: 08000000
+  responces:
+  - ResponceText: '"Hello"'
+    NextState: {fileID: 11400000, guid: 362b7ba5cd4d95743b4f6947d2b47a1d, type: 2}
+    RequiresFlag: 
+    EndDialog: 0
+    TimeCost: 10
+  - ResponceText: Attack NPC
+    NextState: {fileID: 0}
+    RequiresFlag: 1000000020000000
+    EndDialog: 1
+    TimeCost: 5
+  - ResponceText: Leave
+    NextState: {fileID: 11400000, guid: 39fc39be43756ac4f947889bea372a87, type: 2}
+    RequiresFlag: 
+    EndDialog: 1
+    TimeCost: 0

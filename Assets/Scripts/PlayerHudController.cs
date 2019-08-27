@@ -14,6 +14,8 @@ public class PlayerHudController : MonoBehaviour
 	[SerializeField] GameObject GameWonNode = null;
 	[SerializeField] GameObject GameLostNode = null;
 
+
+	[SerializeField] Text StoryProgress = null;
 	[SerializeField] Text Timer = null;
 	[SerializeField] Text Hint = null;
 
@@ -22,7 +24,7 @@ public class PlayerHudController : MonoBehaviour
 	
 	void Awake( )
 	{
-		 m_GameState = (GameState)FindObjectOfType(typeof(GameState));
+		m_GameState = (GameState)FindObjectOfType(typeof(GameState));
 		Assert.IsNotNull( m_GameState , "GameState is null" );
 			   
 		IntroductionNode.SetActive( false );
@@ -126,4 +128,11 @@ public class PlayerHudController : MonoBehaviour
 		return;
 	}
 
+	public void UpdateDialogProgress( int unlocked , int total )
+	{
+		if( StoryProgress )
+		{
+			StoryProgress.text = unlocked.ToString( "00" ) + "/" + total.ToString( "00" );
+		}
+	}
 }
