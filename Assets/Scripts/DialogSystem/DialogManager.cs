@@ -198,10 +198,8 @@ public class DialogManager : MonoBehaviour
 
 	void CheckInitialSaveData( )
 	{
-		Dialog_State[] all_states = GetAllInstances<Dialog_State>(  "Scripts/DialogSystem/DialogStates" );
-
-		m_TotalDialogsIngame = all_states.Length;
-		Debug.Log( all_states.Length );
+		//VERY HORRIBLE PRACTICE DONT DO IN REAL LIFE :D
+		m_TotalDialogsIngame = Resources.LoadAll("DialogStates", typeof(Dialog_State)).Length;
 
 		//Check for save game file exists
 
@@ -238,21 +236,5 @@ public class DialogManager : MonoBehaviour
 		FileStream file = File.Create(Application.persistentDataPath + "/gamesave.save");
 		bf.Serialize(file, m_Save);
 		file.Close( );
-	}
-	
-	public static T[] GetAllInstances<T>( string base_path ) where T : ScriptableObject
-	{
-	    string[] guids = AssetDatabase.FindAssets("t:"+ typeof(T).Name, new[] {"Assets/" + base_path} ) ;  //FindAssets uses tags check documentation for more info
-	    T[] a = new T[guids.Length];
-	    for(int i =0;i<guids.Length;i++)         //probably could get optimized 
-	    {
-	        string path = AssetDatabase.GUIDToAssetPath(guids[i]);
-	        a[i] = AssetDatabase.LoadAssetAtPath<T>(path);
-	    }
-	
-	    return a;
-	
-	}
-
-
+	}	   
 }

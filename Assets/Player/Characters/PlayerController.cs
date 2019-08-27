@@ -149,8 +149,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				{
 					m_PlayerHud.HideMap( );
 					OnResumepGame( );
+				}				
+			
+				if ( (Input.GetKeyDown("escape") ) && m_PlayerHud.GeIngameMenuActive( ) )
+				{
+					m_PlayerHud.SetIngameMenu( false );
+					OnResumepGame( );
 				}
-				
 			}
 			else
 			{
@@ -172,10 +177,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				{
 					m_Jump = true;
 				}
+
+				if (Input.GetKeyDown("escape"))
+				{
+					m_PlayerHud.SetIngameMenu( true );
+					OnPauseGame( true );
+				}				
 			}     
 		}
-
-
 
 		void OnUse( )
 		{
@@ -247,7 +256,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				Debug.DrawRay( cam.transform.position , cam.transform.forward * interactionDistance , Color.white);
 			}
 		}	
-
 
 		/// 
         private void FixedUpdate()

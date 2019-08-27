@@ -84,10 +84,25 @@ public class GameState : MonoBehaviour
 			if( LevelTimer <= 0 )
 			{
 				isTimerPaused = true;
-				//ShowGameOver;
+				OnGameOver( );
 			}
 		}
     }
+
+	void OnGameOver( )
+	{
+		if( m_DialogManager )
+		{
+			m_DialogManager.EndConversation( );
+		}
+
+        PlayerController player = (PlayerController)FindObjectOfType(typeof(PlayerController));
+		if( player )
+		{
+			player.StartGameLost( );
+		}
+	}
+
 
 	public void PauseTimer( )
 	{
@@ -102,6 +117,10 @@ public class GameState : MonoBehaviour
 	public void ChangeTime( float time_to_add )
 	{
 		LevelTimer += time_to_add;
+		if( LevelTimer <= 0 )
+		{
+			OnGameOver( );
+		}
 	}
 
 	public float GetLevelTime( )

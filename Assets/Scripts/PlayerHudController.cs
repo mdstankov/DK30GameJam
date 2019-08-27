@@ -8,7 +8,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class PlayerHudController : MonoBehaviour
 {
     // Start is called before the first frame update
-
+	[SerializeField] GameObject InGameMenu = null;
 	[SerializeField] GameObject MapNode = null;
 	[SerializeField] GameObject IntroductionNode = null;
 	[SerializeField] GameObject GameWonNode = null;
@@ -27,6 +27,8 @@ public class PlayerHudController : MonoBehaviour
 		m_GameState = (GameState)FindObjectOfType(typeof(GameState));
 		Assert.IsNotNull( m_GameState , "GameState is null" );
 			   
+		InGameMenu.SetActive( false );
+
 		IntroductionNode.SetActive( false );
 		GameWonNode.SetActive( false );
 		GameLostNode.SetActive( false );
@@ -88,8 +90,37 @@ public class PlayerHudController : MonoBehaviour
 	{
 		return MapNode.activeSelf;	
 	}
+	
+	public bool GeIngameMenuActive( )
+	{
+		return InGameMenu.activeSelf;	
+	}
 
-	// 
+	public void SetIngameMenu( bool active )
+	{
+		InGameMenu.SetActive( active );
+	}
+
+	public void OnResumeGameButton( )
+	{
+		PlayerController player = (PlayerController)FindObjectOfType(typeof(PlayerController));
+		if( player )
+		{
+			InGameMenu.SetActive( false );
+			player.OnResumepGame( );
+		}
+	}
+	
+	public void OnReturnToLobby( )
+	{
+		LevelLoader level = (LevelLoader)FindObjectOfType(typeof(LevelLoader));
+		if( level )
+		{
+			level.LoadLevel( Levels.Lobby );
+		}
+
+	}
+
 	public void SetWinScreen( bool active )
 	{
 		GameWonNode.SetActive( active );
