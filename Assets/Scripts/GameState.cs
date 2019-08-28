@@ -13,6 +13,11 @@ public enum StoryFlag
     cop_clear = 1 << 4,
     car_inspected = 1 << 5,
     car_correct = 1 << 6,
+    jp_called = 1 << 7,
+    felicity_called = 1 << 8,
+    manfried_used = 1 << 9
+
+
 }
 
 public enum SpecialEvent
@@ -199,6 +204,8 @@ public class GameState : MonoBehaviour
 
 		original = original.Replace( "{car_location}" , GetCarLocationString( ) );
 		
+		original = original.Replace( "{random_number}" , Random.Range( 1000 , 10000 ).ToString( ) );
+
 		return original;
 	}
 

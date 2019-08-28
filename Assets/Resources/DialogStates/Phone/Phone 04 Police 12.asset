@@ -10,43 +10,37 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a503e4ae60021674ba89b0d34cf9c2bd, type: 3}
-  m_Name: Civilian 01
+  m_Name: Phone 04 Police 12
   m_EditorClassIdentifier: 
-  stateText: '"CLEM?" ( No seriously go play Warframe )
-
-'
+  stateText: '"Thank you, we''ll be dispatching a search, but it might take few mins.
+    Do you confirm your {car_color} was stolen and you want us to start a search to
+    look for it?'
   Sound: {fileID: 0}
   StoryFlags: 
   ObjectFlags: 
   Special: 0
   responces:
-  - ResponceText: '"Remind me to tell you a story about kittens"'
-    NextState: {fileID: 11400000, guid: c0a5cb542bc522e40b75aa2288ca5727, type: 2}
+  - ResponceText: '"Yes, please." '
+    NextState: {fileID: 11400000, guid: 16fd60d589b11574b86fc2212a4df4b1, type: 2}
+    RequiresStory: []
+    RequiresObject: []
+    TimeCost: 120
+    ReplaceStartState: {fileID: 0}
+    EndDialog: 0
+  - ResponceText: '"Actually, nevemind" ( Call someone else )
+
+'
+    NextState: {fileID: 0}
     RequiresStory: []
     RequiresObject: []
     TimeCost: 0
     ReplaceStartState: {fileID: 0}
     EndDialog: 0
-  - ResponceText: '"Dude, where is my car?"'
-    NextState: {fileID: 11400000, guid: c0a5cb542bc522e40b75aa2288ca5727, type: 2}
+  - ResponceText: '"Actually, nevermind" ( Call Someone else)'
+    NextState: {fileID: 0}
     RequiresStory: []
     RequiresObject: []
     TimeCost: 0
     ReplaceStartState: {fileID: 0}
     EndDialog: 0
-  - ResponceText: Clem!
-    NextState: {fileID: 11400000, guid: c0a5cb542bc522e40b75aa2288ca5727, type: 2}
-    RequiresStory: []
-    RequiresObject: []
-    TimeCost: 0
-    ReplaceStartState: {fileID: 0}
-    EndDialog: 0
-  - ResponceText: Leave.
-    NextState: {fileID: 11400000, guid: c0a5cb542bc522e40b75aa2288ca5727, type: 2}
-    RequiresStory: []
-    RequiresObject: []
-    TimeCost: 0
-    ReplaceStartState: {fileID: 11400000, guid: c0a5cb542bc522e40b75aa2288ca5727,
-      type: 2}
-    EndDialog: 1
   hideMissingRequirements: 0

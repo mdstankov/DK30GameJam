@@ -12,10 +12,78 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a503e4ae60021674ba89b0d34cf9c2bd, type: 3}
   m_Name: Phone 00
   m_EditorClassIdentifier: 
-  stateText: 
+  stateText: Welcome back to "Horse Phone" network. Who would you like to call?
   Sound: {fileID: 0}
   StoryFlags: 
   ObjectFlags: 
   Special: 0
-  responces: []
-  hideMissingRequirements: 0
+  responces:
+  - ResponceText: Call JP.
+    NextState: {fileID: 11400000, guid: fb8113e1ed3c3e04b822d5061d7eaa30, type: 2}
+    RequiresStory:
+    - Flag: 128
+      HasToBeFalse: 1
+    RequiresObject: []
+    TimeCost: 20
+    ReplaceStartState: {fileID: 0}
+    EndDialog: 0
+  - ResponceText: Call JP Again.
+    NextState: {fileID: 11400000, guid: e0a8574dcd5986640a89a267760c0e32, type: 2}
+    RequiresStory:
+    - Flag: 128
+      HasToBeFalse: 0
+    RequiresObject: []
+    TimeCost: 5
+    ReplaceStartState: {fileID: 0}
+    EndDialog: 0
+  - ResponceText: Call Mom.
+    NextState: {fileID: 11400000, guid: ee62696a0f88f284392e44210427e71f, type: 2}
+    RequiresStory: []
+    RequiresObject: []
+    TimeCost: 20
+    ReplaceStartState: {fileID: 0}
+    EndDialog: 0
+  - ResponceText: Call Police.
+    NextState: {fileID: 11400000, guid: 3da32b6b90e090f4bb02403a6cbd1481, type: 2}
+    RequiresStory:
+    - Flag: 8
+      HasToBeFalse: 1
+    RequiresObject: []
+    TimeCost: 10
+    ReplaceStartState: {fileID: 0}
+    EndDialog: 0
+  - ResponceText: Call Police Again.
+    NextState: {fileID: 11400000, guid: 9495db89beb6b01429bb4ca236d1a608, type: 2}
+    RequiresStory:
+    - Flag: 8
+      HasToBeFalse: 0
+    RequiresObject: []
+    TimeCost: 0
+    ReplaceStartState: {fileID: 0}
+    EndDialog: 0
+  - ResponceText: Call Felicity
+    NextState: {fileID: 11400000, guid: 05338f634045277499e26b98d805911e, type: 2}
+    RequiresStory:
+    - Flag: 256
+      HasToBeFalse: 1
+    RequiresObject: []
+    TimeCost: 10
+    ReplaceStartState: {fileID: 0}
+    EndDialog: 0
+  - ResponceText: Call Felicity
+    NextState: {fileID: 11400000, guid: e74429b13936a0c4381ead055546c9d7, type: 2}
+    RequiresStory:
+    - Flag: 256
+      HasToBeFalse: 0
+    RequiresObject: []
+    TimeCost: 10
+    ReplaceStartState: {fileID: 0}
+    EndDialog: 0
+  - ResponceText: Leave
+    NextState: {fileID: 0}
+    RequiresStory: []
+    RequiresObject: []
+    TimeCost: 0
+    ReplaceStartState: {fileID: 0}
+    EndDialog: 1
+  hideMissingRequirements: 1

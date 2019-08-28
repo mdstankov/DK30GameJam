@@ -24,6 +24,7 @@ MonoBehaviour:
     RequiresStory: []
     RequiresObject: []
     TimeCost: 0
-    ReplaceStartState: {fileID: 0}
+    ReplaceStartState: {fileID: 11400000, guid: 202b14fcdd633bb439676b005808e7db,
+      type: 2}
     EndDialog: 0
   hideMissingRequirements: 0

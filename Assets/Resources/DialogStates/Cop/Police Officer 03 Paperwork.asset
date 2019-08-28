@@ -10,23 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a503e4ae60021674ba89b0d34cf9c2bd, type: 3}
-  m_Name: Manfred 01 Color
+  m_Name: Police Officer 03 Paperwork
   m_EditorClassIdentifier: 
-  stateText: 'A vision of you and manfried driving together in your {car_color} car
-    on a rainbow road fills your mind. As you laugh and share stories with your friend.
-
-'
+  stateText: After what feels like a TvT. "Oh. Oopsie it turns out I have forgotten
+    some papers, this will take another 5 minutes... my bad"
   Sound: {fileID: 0}
-  StoryFlags: 01000000
+  StoryFlags: 
   ObjectFlags: 
   Special: 0
   responces:
-  - ResponceText: Continue.
-    NextState: {fileID: 11400000, guid: 89718d2a93d87b540995a2f88dbaac3e, type: 2}
+  - ResponceText: Just pull out your Mono-white deck!
+    NextState: {fileID: 11400000, guid: b404788b127a8a143af41634fb8a6345, type: 2}
     RequiresStory: []
     RequiresObject: []
     TimeCost: 0
-    ReplaceStartState: {fileID: 11400000, guid: 202b14fcdd633bb439676b005808e7db,
-      type: 2}
+    ReplaceStartState: {fileID: 0}
     EndDialog: 0
   hideMissingRequirements: 0

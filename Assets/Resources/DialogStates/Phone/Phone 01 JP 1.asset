@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a503e4ae60021674ba89b0d34cf9c2bd, type: 3}
+  m_Name: Phone 01 JP 1
+  m_EditorClassIdentifier: 
+  stateText: "\"Man, that sucks. I thought you had walked to event, as after the party
+    you ran home, yelling \"I used to run a minute mile!\". \r\nI'm not so sure, but
+    saw a car like yours at the at {car_location} after the party. Anyway POE season
+    started, bye!\" \r\nBefore you can say or ask anything... The call ended."
+  Sound: {fileID: 0}
+  StoryFlags: 8000000002000000
+  ObjectFlags: 
+  Special: 0
+  responces:
+  - ResponceText: Call Someone else
+    NextState: {fileID: 11400000, guid: d8040b47b99e59445aebc79a499034fe, type: 2}
+    RequiresStory: []
+    RequiresObject: []
+    TimeCost: 0
+    ReplaceStartState: {fileID: 0}
+    EndDialog: 0
+  - ResponceText: Leave
+    NextState: {fileID: 0}
+    RequiresStory: []
+    RequiresObject: []
+    TimeCost: 0
+    ReplaceStartState: {fileID: 0}
+    EndDialog: 1
+  hideMissingRequirements: 0
