@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Phone 00
   m_EditorClassIdentifier: 
   stateText: Welcome back to "Horse Phone" network. Who would you like to call?
-  Sound: {fileID: 0}
+  SoundClip: {fileID: 0}
   StoryFlags: 
   ObjectFlags: 
   Special: 0
   responces:
-  - ResponceText: Call JP.
-    NextState: {fileID: 11400000, guid: fb8113e1ed3c3e04b822d5061d7eaa30, type: 2}
+  - ResponceText: Call Police.
+    NextState: {fileID: 11400000, guid: 3da32b6b90e090f4bb02403a6cbd1481, type: 2}
     RequiresStory:
     - Flag: 128
       HasToBeFalse: 1
@@ -27,8 +27,8 @@ MonoBehaviour:
     TimeCost: 20
     ReplaceStartState: {fileID: 0}
     EndDialog: 0
-  - ResponceText: Call JP Again.
-    NextState: {fileID: 11400000, guid: e0a8574dcd5986640a89a267760c0e32, type: 2}
+  - ResponceText: Call Police Again.
+    NextState: {fileID: 11400000, guid: 9495db89beb6b01429bb4ca236d1a608, type: 2}
     RequiresStory:
     - Flag: 128
       HasToBeFalse: 0
@@ -43,8 +43,8 @@ MonoBehaviour:
     TimeCost: 20
     ReplaceStartState: {fileID: 0}
     EndDialog: 0
-  - ResponceText: Call Police.
-    NextState: {fileID: 11400000, guid: 3da32b6b90e090f4bb02403a6cbd1481, type: 2}
+  - ResponceText: Call JP.
+    NextState: {fileID: 11400000, guid: 59f4910e0609080488f86b883835a35d, type: 2}
     RequiresStory:
     - Flag: 8
       HasToBeFalse: 1
@@ -52,8 +52,8 @@ MonoBehaviour:
     TimeCost: 10
     ReplaceStartState: {fileID: 0}
     EndDialog: 0
-  - ResponceText: Call Police Again.
-    NextState: {fileID: 11400000, guid: 9495db89beb6b01429bb4ca236d1a608, type: 2}
+  - ResponceText: Call JP Again.
+    NextState: {fileID: 11400000, guid: e0a8574dcd5986640a89a267760c0e32, type: 2}
     RequiresStory:
     - Flag: 8
       HasToBeFalse: 0

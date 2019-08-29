@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Car 00
   m_EditorClassIdentifier: 
   stateText: This appears to be a car.
-  Sound: {fileID: 0}
+  SoundClip: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   StoryFlags: 
   ObjectFlags: 
   Special: 0
@@ -25,6 +25,7 @@ MonoBehaviour:
     - Flag: 32
       HasToBeFalse: 0
     TimeCost: 0
+    ReplaceStartState: {fileID: 0}
     EndDialog: 0
   - ResponceText: Continue.
     NextState: {fileID: 11400000, guid: 992b7af941daaab4786eda5d613c3639, type: 2}
@@ -33,5 +34,6 @@ MonoBehaviour:
     - Flag: 32
       HasToBeFalse: 1
     TimeCost: 0
+    ReplaceStartState: {fileID: 0}
     EndDialog: 0
   hideMissingRequirements: 1

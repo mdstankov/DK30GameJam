@@ -9,6 +9,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (CapsuleCollider))]
     public class PlayerController : MonoBehaviour
     {
+		public AudioSource SoundSource;
 		public GameObject PlayerHudPrefab;
 		private PlayerHudController m_PlayerHud;
 
@@ -199,6 +200,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			{
 				OnPauseGame( true );				
 			}		
+		}
+
+		public void PlaySound( AudioClip clip )
+		{
+			if( clip == null )
+				return;
+
+			if( SoundSource )
+				SoundSource.PlayOneShot( clip );
 		}
 
 		public void OnPauseGame( bool with_cursor )

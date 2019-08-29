@@ -25,7 +25,7 @@ public struct DialogResponceStruct
 public class Dialog_State : ScriptableObject
 {
     [TextArea(7,5)] [SerializeField] string stateText = "";
-    [SerializeField] AudioClip Sound = null;
+    [SerializeField] public AudioClip SoundClip = null;
     [SerializeField] public StoryFlag[] StoryFlags;
 	[SerializeField] public StoryFlag[] ObjectFlags;
     [SerializeField] public SpecialEvent Special = SpecialEvent.None;

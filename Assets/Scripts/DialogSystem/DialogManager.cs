@@ -86,6 +86,11 @@ public class DialogManager : MonoBehaviour
 		DialogTextUI.text = state_text;
 		//TODO:SetFlags
 		
+		//if sound, play sound
+		if( state.SoundClip != null )
+			m_Player.PlaySound( state.SoundClip );
+
+
 		foreach( StoryFlag flag in m_CurrentState.StoryFlags )
 		{
 			m_GameState.SetStoryFlag( flag );
