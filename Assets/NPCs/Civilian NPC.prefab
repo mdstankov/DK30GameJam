@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_StartingState: {fileID: 11400000, guid: c0a5cb542bc522e40b75aa2288ca5727, type: 2}
-  m_ObjectName: Clem
+  m_ObjectName: Civilian
   FocusedNameColor: {r: 1, g: 0.654902, b: 0.101960786, a: 1}
   NormalNameColor: {r: 1, g: 1, b: 1, a: 1}
   m_ObjectFlags: 

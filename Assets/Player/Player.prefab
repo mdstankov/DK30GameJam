@@ -80,9 +80,9 @@ MonoBehaviour:
     type: 3}
   cam: {fileID: 1874307739922289870}
   movementSettings:
-    ForwardSpeed: 8
-    BackwardSpeed: 4
-    StrafeSpeed: 4
+    ForwardSpeed: 10
+    BackwardSpeed: 8
+    StrafeSpeed: 8
     RunMultiplier: 2
     RunKey: 304
     JumpForce: 60
@@ -133,7 +133,7 @@ MonoBehaviour:
     groundCheckDistance: 0.1
     stickToGroundHelperDistance: 0.6
     slowDownRate: 20
-    airControl: 1
+    airControl: 0
     shellOffset: 0
 --- !u!1 &1874307739921569514
 GameObject:

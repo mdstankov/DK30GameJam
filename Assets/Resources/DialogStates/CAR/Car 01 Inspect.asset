@@ -25,20 +25,40 @@ MonoBehaviour:
     RequiresObject:
     - Flag: 64
       HasToBeFalse: 1
-    TimeCost: 0
+    TimeCost: 20
+    ReplaceStartState: {fileID: 11400000, guid: 2a516edb0b155bf49b8c4e2251fd6b9b,
+      type: 2}
     EndDialog: 0
   - ResponceText: Inspect the car
     NextState: {fileID: 11400000, guid: 9924d70bc9f7b0c4f96b10c56cbd0864, type: 2}
-    RequiresStory: []
+    RequiresStory:
+    - Flag: 4
+      HasToBeFalse: 1
+    RequiresObject:
+    - Flag: 64
+      HasToBeFalse: 0
+    TimeCost: 20
+    ReplaceStartState: {fileID: 11400000, guid: 2a516edb0b155bf49b8c4e2251fd6b9b,
+      type: 2}
+    EndDialog: 0
+  - ResponceText: Inspect the car
+    NextState: {fileID: 11400000, guid: 3362b36be2f09bc4aa62aa4fb5fa43bf, type: 2}
+    RequiresStory:
+    - Flag: 8
+      HasToBeFalse: 0
+    - Flag: 4
+      HasToBeFalse: 0
     RequiresObject:
     - Flag: 64
       HasToBeFalse: 0
     TimeCost: 0
+    ReplaceStartState: {fileID: 0}
     EndDialog: 0
   - ResponceText: Leave
     NextState: {fileID: 0}
     RequiresStory: []
     RequiresObject: []
     TimeCost: 0
+    ReplaceStartState: {fileID: 0}
     EndDialog: 1
-  hideMissingRequirements: 0
+  hideMissingRequirements: 1

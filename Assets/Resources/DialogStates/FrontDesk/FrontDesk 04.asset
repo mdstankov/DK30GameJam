@@ -10,27 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a503e4ae60021674ba89b0d34cf9c2bd, type: 3}
-  m_Name: FrontDesk 00
+  m_Name: FrontDesk 04
   m_EditorClassIdentifier: 
-  stateText: The lady sitting at the front desk glances over you for a second than
-    continue doing... what appears to be absolutely nothing.
+  stateText: "She signs, get up and leads you to a small room in the back. Where both
+    of you check the security footage\r.\n*You see yourself leaving with a {car_color}
+    car few days earlier for the event. And returning later on foot with a big bag
+    full of donuts and a panini. "
   Sound: {fileID: 0}
-  StoryFlags: 
+  StoryFlags: 01000000
   ObjectFlags: 
   Special: 0
   responces:
-  - ResponceText: '"Excuse me, I think my car was stolen from the parking lot"'
-    NextState: {fileID: 11400000, guid: 6a4233ce6a4e6554b960fee4f27c084d, type: 2}
+  - ResponceText: Continue.
+    NextState: {fileID: 11400000, guid: f4df98faa6c9bca45a66a2a7501abde4, type: 2}
     RequiresStory: []
     RequiresObject: []
     TimeCost: 0
     ReplaceStartState: {fileID: 0}
     EndDialog: 0
-  - ResponceText: Leave.
-    NextState: {fileID: 0}
-    RequiresStory: []
-    RequiresObject: []
-    TimeCost: 0
-    ReplaceStartState: {fileID: 0}
-    EndDialog: 1
   hideMissingRequirements: 0

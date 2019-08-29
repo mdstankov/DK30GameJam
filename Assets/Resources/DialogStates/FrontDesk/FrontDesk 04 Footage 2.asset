@@ -10,27 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a503e4ae60021674ba89b0d34cf9c2bd, type: 3}
-  m_Name: FrontDesk 00
+  m_Name: FrontDesk 04 Footage 2
   m_EditorClassIdentifier: 
-  stateText: The lady sitting at the front desk glances over you for a second than
-    continue doing... what appears to be absolutely nothing.
+  stateText: '"Oh, Look. The car not stolen from our parking lot. Oh'' Really, good
+    news to hear... for us" She smirked as she enjoys the power trip over you. You
+    decide it''s best to leave.. and maybe just change your name and move out of here...
+
+'
   Sound: {fileID: 0}
   StoryFlags: 
   ObjectFlags: 
   Special: 0
   responces:
-  - ResponceText: '"Excuse me, I think my car was stolen from the parking lot"'
-    NextState: {fileID: 11400000, guid: 6a4233ce6a4e6554b960fee4f27c084d, type: 2}
-    RequiresStory: []
-    RequiresObject: []
-    TimeCost: 0
-    ReplaceStartState: {fileID: 0}
-    EndDialog: 0
-  - ResponceText: Leave.
+  - ResponceText: Leave... forever
     NextState: {fileID: 0}
     RequiresStory: []
     RequiresObject: []
-    TimeCost: 0
-    ReplaceStartState: {fileID: 0}
+    TimeCost: 5
+    ReplaceStartState: {fileID: 11400000, guid: dffa79164b79c0746ba62c0bff3dd486,
+      type: 2}
     EndDialog: 1
   hideMissingRequirements: 0

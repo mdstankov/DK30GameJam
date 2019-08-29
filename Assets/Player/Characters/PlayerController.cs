@@ -173,6 +173,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
 					OnPauseGame( false );
 				}
 								
+				if( CrossPlatformInputManager.GetButtonDown("Objectives") )
+				{
+					m_PlayerHud.SetIntroScreen( true );
+					OnPauseGame( false );
+				}
+					
+
 				if (CrossPlatformInputManager.GetButtonDown("Jump") && !m_Jump)
 				{
 					m_Jump = true;
@@ -239,7 +246,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 					m_CurrentInteractable.OnFocusGained( );
 
 				}
-				else if ( m_CurrentInteractable  )
+				else if ( m_CurrentInteractable )
 				{
 					m_CurrentInteractable.OnFocusLost( );
 					m_CurrentInteractable = null;

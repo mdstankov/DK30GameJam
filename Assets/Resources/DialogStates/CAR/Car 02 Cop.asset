@@ -10,22 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a503e4ae60021674ba89b0d34cf9c2bd, type: 3}
-  m_Name: Phone 01 JP 1
+  m_Name: Car 02 Cop
   m_EditorClassIdentifier: 
-  stateText: '"Welcome to Dropped Calls! Tonight we are on episode {random_number}.
-    Oh, hey Sean!"
-
-'
+  stateText: 
   Sound: {fileID: 0}
   StoryFlags: 
   ObjectFlags: 
-  Special: 0
-  responces:
-  - ResponceText: Continue.
-    NextState: {fileID: 11400000, guid: 7bf4f7ac427c09c48a7822e5278fcca3, type: 2}
-    RequiresStory: []
-    RequiresObject: []
-    TimeCost: 0
-    ReplaceStartState: {fileID: 0}
-    EndDialog: 0
+  Special: 3
+  responces: []
   hideMissingRequirements: 0

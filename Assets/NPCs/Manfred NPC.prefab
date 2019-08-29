@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_StartingState: {fileID: 11400000, guid: 23f348dae1622ff4e8f61460c5e728e4, type: 2}
-  m_ObjectName: Manfred
+  m_ObjectName: Manfred <3
   FocusedNameColor: {r: 1, g: 0.654902, b: 0.101960786, a: 1}
   NormalNameColor: {r: 1, g: 1, b: 1, a: 1}
   m_ObjectFlags: 

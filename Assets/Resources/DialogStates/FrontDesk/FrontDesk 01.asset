@@ -10,25 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a503e4ae60021674ba89b0d34cf9c2bd, type: 3}
-  m_Name: Phone 04 Police 121
+  m_Name: FrontDesk 01
   m_EditorClassIdentifier: 
-  stateText: "\"Ok sir, please wait a moment.\" A seval minutes pass in which both
-    of you just wait there in silence... it was quite awkward.\r\n\"Hello, sir? Sir?
-    We recovered your car, it was located at {car_location}, An officer now will be
-    waiting for you next to it. Please go pick it up.\""
+  stateText: '"Stolen?" Her voice shows emotion, but her face remain stone cold as
+    she continues minding her own business. "That is so sad... for you"'
   Sound: {fileID: 0}
-  StoryFlags: 0800000004000000
+  StoryFlags: 
   ObjectFlags: 
-  Special: 1
+  Special: 0
   responces:
-  - ResponceText: '"I''ll be right over."( Call someone else )'
-    NextState: {fileID: 11400000, guid: d8040b47b99e59445aebc79a499034fe, type: 2}
+  - ResponceText: '"Yes, it is.. Well, I''d like to see the security footage, than"
+      Exert your full moderate authority!'
+    NextState: {fileID: 11400000, guid: 72400a93962316d45a79503888cbed39, type: 2}
     RequiresStory: []
     RequiresObject: []
-    TimeCost: 0
+    TimeCost: 15
     ReplaceStartState: {fileID: 0}
     EndDialog: 0
-  - ResponceText: '"I''ll be right over."( Leave the phone )'
+  - ResponceText: Leave
     NextState: {fileID: 0}
     RequiresStory: []
     RequiresObject: []

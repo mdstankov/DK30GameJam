@@ -28,8 +28,8 @@ public class LevelLoader : MonoBehaviour
 
 	public void StartGame( )
 	{
-		SceneManager.LoadScene( "3D Test Scene" );
-		//SceneManager.LoadScene("GameLevel");
+		//SceneManager.LoadScene( "3D Test Scene" );
+		SceneManager.LoadScene("GameLevel");
 	}
 	
 	public void LoadLevel( Levels level )
