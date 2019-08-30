@@ -13257,6 +13257,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5235587753015171089, guid: f8d925b51488a6d4b9b8bb2735794649,
+        type: 3}
+      propertyPath: GameWinSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
+    - target: {fileID: 5235587753015171089, guid: f8d925b51488a6d4b9b8bb2735794649,
+        type: 3}
+      propertyPath: GameLoseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
+    - target: {fileID: 5235587753015171089, guid: f8d925b51488a6d4b9b8bb2735794649,
+        type: 3}
+      propertyPath: LevelTimer
+      value: 540
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8d925b51488a6d4b9b8bb2735794649, type: 3}
 --- !u!1001 &1251318182

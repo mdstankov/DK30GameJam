@@ -50,7 +50,10 @@ public class GameState : MonoBehaviour
 {
 	[SerializeField] GameObject CopPrefab = null;
 
-	float LevelTimer = 9.0f * 60.0f;
+	[SerializeField] AudioClip GameWinSound = null;
+	[SerializeField] AudioClip GameLoseSound = null;
+	
+	[SerializeField] float LevelTimer = 9.0f * 60.0f;
 	bool isTimerPaused = true;
 		 
 	//GameOver State
@@ -101,6 +104,9 @@ public class GameState : MonoBehaviour
         PlayerController player = (PlayerController)FindObjectOfType(typeof(PlayerController));
 		if( player )
 		{
+			if( GameLoseSound ) 
+				{ player.PlaySound( GameLoseSound );}
+
 			player.StartGameLost( );
 		}
 	}
@@ -175,6 +181,10 @@ public class GameState : MonoBehaviour
             PlayerController player = (PlayerController)FindObjectOfType(typeof(PlayerController));
 			if( player )
 			{
+
+				if( GameWinSound ) 
+					{ player.PlaySound( GameWinSound );	 }
+											 
 				player.StartGameWon( );
 			}
 			return;
@@ -188,7 +198,10 @@ public class GameState : MonoBehaviour
 
             PlayerController player = (PlayerController)FindObjectOfType(typeof(PlayerController));
 			if( player )
-			{
+			{		
+				if( GameLoseSound ) 
+					{ player.PlaySound( GameLoseSound );}
+					
 				player.StartGameLost( );
 			}
 			return;
