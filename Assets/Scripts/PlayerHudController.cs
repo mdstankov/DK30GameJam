@@ -135,6 +135,11 @@ public class PlayerHudController : MonoBehaviour
 	{
 		IntroductionNode.SetActive( active );
 	}
+
+	public bool GetIntroActive( )
+	{
+		return IntroductionNode.activeSelf;
+	}
 	//
 
 	public void OnReturnToLobbyButton( )

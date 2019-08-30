@@ -146,12 +146,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		{
 			if( m_UImode )
 			{
-				if( CrossPlatformInputManager.GetButtonDown("Map") && m_PlayerHud.GetMapActive( ) )
+				if( ( CrossPlatformInputManager.GetButtonDown("Map") || Input.GetKeyDown("escape") ) && m_PlayerHud.GetMapActive( ) )
 				{
 					m_PlayerHud.HideMap( );
 					OnResumepGame( );
 				}				
 			
+				if ( ( CrossPlatformInputManager.GetButtonDown("Objectives") || Input.GetKeyDown("escape") ) && m_PlayerHud.GetIntroActive( ) )
+				{
+					m_PlayerHud.SetIntroScreen( false );
+					OnResumepGame( );
+				}
+				
+
 				if ( (Input.GetKeyDown("escape") ) && m_PlayerHud.GeIngameMenuActive( ) )
 				{
 					m_PlayerHud.SetIngameMenu( false );
@@ -177,7 +184,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				if( CrossPlatformInputManager.GetButtonDown("Objectives") )
 				{
 					m_PlayerHud.SetIntroScreen( true );
-					OnPauseGame( false );
+					OnPauseGame( true );
 				}
 					
 
