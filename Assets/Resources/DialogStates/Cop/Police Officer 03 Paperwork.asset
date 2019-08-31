@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Police Officer 03 Paperwork
   m_EditorClassIdentifier: 
   stateText: After what feels like a TvT. "Oh. Oopsie it turns out I have forgotten
-    some papers, this will take another 5 minutes... my bad"
-  Sound: {fileID: 0}
+    some papers, this will take another 5 minutes... my bad, eh"
+  SoundClip: {fileID: 8300000, guid: c7d5fca6d8261654f98ea887bf6847a7, type: 3}
   StoryFlags: 
   ObjectFlags: 
   Special: 0

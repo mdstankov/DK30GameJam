@@ -15,7 +15,7 @@ MonoBehaviour:
   stateText: '"Thank you, we''ll be dispatching a search, but it might take few mins.
     Do you confirm your {car_color} was stolen and you want us to start a search to
     look for it?'
-  Sound: {fileID: 0}
+  SoundClip: {fileID: 8300000, guid: 2edd61ab37152044a83a596d3d0d8878, type: 3}
   StoryFlags: 
   ObjectFlags: 
   Special: 0
@@ -24,7 +24,7 @@ MonoBehaviour:
     NextState: {fileID: 11400000, guid: 16fd60d589b11574b86fc2212a4df4b1, type: 2}
     RequiresStory: []
     RequiresObject: []
-    TimeCost: 120
+    TimeCost: 90
     ReplaceStartState: {fileID: 0}
     EndDialog: 0
   - ResponceText: '"Actually, nevemind" ( Call someone else )

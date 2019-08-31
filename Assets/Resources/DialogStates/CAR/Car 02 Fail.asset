@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateText: This appear to not be your car. You still enjoyed the time you spend
     with it.
-  Sound: {fileID: 0}
+  SoundClip: {fileID: 8300000, guid: 28a214b031b7ca246ac3229f282bc5b4, type: 3}
   StoryFlags: 
   ObjectFlags: 20000000
   Special: 0
@@ -24,5 +24,6 @@ MonoBehaviour:
     RequiresStory: []
     RequiresObject: []
     TimeCost: 0
+    ReplaceStartState: {fileID: 0}
     EndDialog: 0
   hideMissingRequirements: 1

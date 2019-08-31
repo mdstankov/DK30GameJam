@@ -1526,13 +1526,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2820399415303320866, guid: 840baf9fecb9a784ab90f8ae41f8f5b9,
         type: 3}
-      propertyPath: m_audioClip
-      value: 
+      propertyPath: m_Volume
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 2820399415303320866, guid: 840baf9fecb9a784ab90f8ae41f8f5b9,
         type: 3}
-      propertyPath: Loop
-      value: 1
+      propertyPath: BypassReverbZones
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 815576741495231996, guid: 840baf9fecb9a784ab90f8ae41f8f5b9,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 840baf9fecb9a784ab90f8ae41f8f5b9, type: 3}

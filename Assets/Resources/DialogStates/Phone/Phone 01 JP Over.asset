@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateText: '"Welcome to Dropped Calls, everyone! Tonight we are on episode {random_number}.
     Please leave a message." JP answering machine greets you warmly...'
-  Sound: {fileID: 0}
+  SoundClip: {fileID: 8300000, guid: 77458b944a5249a4c959e30966b62b94, type: 3}
   StoryFlags: 
   ObjectFlags: 
   Special: 0

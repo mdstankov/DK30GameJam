@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a503e4ae60021674ba89b0d34cf9c2bd, type: 3}
   m_Name: Phone 02 Mom 1
   m_EditorClassIdentifier: 
-  stateText: '"Call the police, immediately!"'
-  Sound: {fileID: 0}
+  stateText: '"Call the police, immediately!" She hangs up.'
+  SoundClip: {fileID: 8300000, guid: 299b844de924104419b3d0d8856f7afa, type: 3}
   StoryFlags: 
   ObjectFlags: 
   Special: 0
   responces:
   - ResponceText: '"Mom, I already did..."'
-    NextState: {fileID: 11400000, guid: 81d38b9e7c13300468124e125a2afc62, type: 2}
+    NextState: {fileID: 11400000, guid: 2f39e6ae8b817794dbb8679924f7206a, type: 2}
     RequiresStory:
     - Flag: 8
       HasToBeFalse: 0

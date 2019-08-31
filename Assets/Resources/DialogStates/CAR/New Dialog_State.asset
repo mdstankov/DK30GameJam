@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a503e4ae60021674ba89b0d34cf9c2bd, type: 3}
+  m_Name: New Dialog_State
+  m_EditorClassIdentifier: 
+  stateText: 
+  SoundClip: {fileID: 0}
+  StoryFlags: 
+  ObjectFlags: 
+  Special: 0
+  responces:
+  - ResponceText: 
+    NextState: {fileID: 11400000, guid: 833a9651eac406b4c8c5d02233eb6523, type: 2}
+    RequiresStory:
+    - Flag: 1
+      HasToBeFalse: 0
+    RequiresObject: []
+    TimeCost: 15
+    ReplaceStartState: {fileID: 0}
+    EndDialog: 0
+  - ResponceText: 
+    NextState: {fileID: 0}
+    RequiresStory: []
+    RequiresObject: []
+    TimeCost: 0
+    ReplaceStartState: {fileID: 0}
+    EndDialog: 0
+  - ResponceText: 
+    NextState: {fileID: 0}
+    RequiresStory: []
+    RequiresObject: []
+    TimeCost: 0
+    ReplaceStartState: {fileID: 0}
+    EndDialog: 0
+  hideMissingRequirements: 0

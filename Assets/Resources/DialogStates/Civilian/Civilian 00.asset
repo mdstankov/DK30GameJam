@@ -16,7 +16,7 @@ MonoBehaviour:
     <3 )
 
 '
-  Sound: {fileID: 0}
+  SoundClip: {fileID: 8300000, guid: fb42f11a383d0c3478193627d1db7ac9, type: 3}
   StoryFlags: 
   ObjectFlags: 
   Special: 0

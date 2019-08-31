@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateText: '"Ok, sir. Can you please tell us the color of your vehicle so we can
     track it down"'
-  Sound: {fileID: 0}
+  SoundClip: {fileID: 8300000, guid: 0c7ae48702b77c241b9e6ca9437e496f, type: 3}
   StoryFlags: 
   ObjectFlags: 
   Special: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateText: '"Stolen?" Her voice shows emotion, but her face remain stone cold as
     she continues minding her own business. "That is so sad... for you"'
-  Sound: {fileID: 0}
+  SoundClip: {fileID: 8300000, guid: 94cfeed18a4d9604a8a8bd56ca125860, type: 3}
   StoryFlags: 
   ObjectFlags: 
   Special: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateText: Several moments pass as she continues doing... what still appears to
     be nothing
-  Sound: {fileID: 0}
+  SoundClip: {fileID: 0}
   StoryFlags: 
   ObjectFlags: 
   Special: 0
@@ -30,7 +30,7 @@ MonoBehaviour:
     NextState: {fileID: 11400000, guid: 3e9ec5c5f886baa47b08a42f56efdb75, type: 2}
     RequiresStory: []
     RequiresObject: []
-    TimeCost: 30
+    TimeCost: 15
     ReplaceStartState: {fileID: 0}
     EndDialog: 0
   - ResponceText: Leave.

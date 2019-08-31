@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a503e4ae60021674ba89b0d34cf9c2bd, type: 3}
   m_Name: Police Officer 03 Robbery
   m_EditorClassIdentifier: 
-  stateText: '"Well, yeah. It''s pretty common for this area." She continues to wait
-    for you.'
-  Sound: {fileID: 0}
+  stateText: '"Well, yeah, eh. It''s pretty common for this area." She continues to
+    wait for you.'
+  SoundClip: {fileID: 8300000, guid: f8c5035cdef219046a47cc316c9b352e, type: 3}
   StoryFlags: 
   ObjectFlags: 
   Special: 0

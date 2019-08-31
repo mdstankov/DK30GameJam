@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateText: '"Well, yeah. It''s pretty common for this area." She shrugs your comment
     off.'
-  Sound: {fileID: 0}
+  SoundClip: {fileID: 8300000, guid: 9e9b2643d9bd3864c9ca5b1d1e1d1b81, type: 3}
   StoryFlags: 
   ObjectFlags: 
   Special: 0

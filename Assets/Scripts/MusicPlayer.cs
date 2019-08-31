@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicPlayer : MonoBehaviour {
+public class MusicPlayer : Singleton<MusicPlayer> {
 
     AudioSource audioSource;
 
 	// Use this for initialization
 	void Start ()
 	{
-		DontDestroyOnLoad(this);
 	//	audioSource = GetComponent<AudioSource>();
 	//	audioSource.volume = PlayerPrefsController.GetMasterVolume();
 	}

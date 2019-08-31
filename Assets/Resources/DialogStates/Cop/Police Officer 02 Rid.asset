@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Police Officer 02 Rid
   m_EditorClassIdentifier: 
   stateText: You need to find a way to make the police officer go away from your car.
-  Sound: {fileID: 0}
+  SoundClip: {fileID: 0}
   StoryFlags: 
   ObjectFlags: 
   Special: 0
@@ -46,11 +46,11 @@ MonoBehaviour:
     TimeCost: 15
     ReplaceStartState: {fileID: 0}
     EndDialog: 0
-  - ResponceText: Leave
-    NextState: {fileID: 0}
+  - ResponceText: '"Would you mind leaving me alone with the car for a min?"'
+    NextState: {fileID: 11400000, guid: 860f3846001210446b363498b83f6cda, type: 2}
     RequiresStory: []
     RequiresObject: []
-    TimeCost: 0
+    TimeCost: 10
     ReplaceStartState: {fileID: 0}
-    EndDialog: 1
+    EndDialog: 0
   hideMissingRequirements: 0

@@ -311,7 +311,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				if( isMovementImput )
 					{  m_RigidBody.drag = 5; }
 				else
-					{  m_RigidBody.drag = 3000; }
+					{  m_RigidBody.drag =  m_RigidBody.drag * m_RigidBody.drag * m_RigidBody.drag; } 
 
                 if ( m_Jump )
                 {

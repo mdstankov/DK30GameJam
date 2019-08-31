@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateText: "\"Whats up? Last time I saw you was after the party, you ran home yelling
     \"I used to run a minute mile!\".\" \r"
-  Sound: {fileID: 0}
+  SoundClip: {fileID: 8300000, guid: 43e020bb734b9bf409bd26650f4af350, type: 3}
   StoryFlags: 
   ObjectFlags: 
   Special: 0

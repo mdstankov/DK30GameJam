@@ -16,7 +16,7 @@ MonoBehaviour:
     of you just wait there in silence... it was quite awkward.\r\n\"Hello, sir? Sir?
     We recovered your car, it was located at {car_location}, An officer now will be
     waiting for you next to it. Please go pick it up.\""
-  Sound: {fileID: 0}
+  SoundClip: {fileID: 8300000, guid: 0c7ae48702b77c241b9e6ca9437e496f, type: 3}
   StoryFlags: 0800000004000000
   ObjectFlags: 
   Special: 1

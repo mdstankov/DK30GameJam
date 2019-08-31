@@ -16,13 +16,13 @@ MonoBehaviour:
     Oh, hey Sean!"
 
 '
-  Sound: {fileID: 0}
+  SoundClip: {fileID: 8300000, guid: 77458b944a5249a4c959e30966b62b94, type: 3}
   StoryFlags: 
   ObjectFlags: 
   Special: 0
   responces:
-  - ResponceText: '"Hey, dude, I think my car has been stolen!"'
-    NextState: {fileID: 11400000, guid: 74a8687d70470f54898b928814f5d8e1, type: 2}
+  - ResponceText: Continue!"
+    NextState: {fileID: 11400000, guid: 7bf4f7ac427c09c48a7822e5278fcca3, type: 2}
     RequiresStory: []
     RequiresObject: []
     TimeCost: 0

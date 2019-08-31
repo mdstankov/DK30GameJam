@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a503e4ae60021674ba89b0d34cf9c2bd, type: 3}
   m_Name: Phone 02 Mom 2
   m_EditorClassIdentifier: 
-  stateText: 'Your mother explodes into uncontrollable laughter.. for some reason
-    you also hear a doctor laughing in your head as well. '
-  Sound: {fileID: 0}
+  stateText: Your mother explodes into uncontrollable laughter.. for some reason you
+    also hear a doctor laughing in your head as well. She hangs up.
+  SoundClip: {fileID: 8300000, guid: cad5d428a8dbc7c4085195eb18c3e47e, type: 3}
   StoryFlags: 
   ObjectFlags: 
   Special: 0

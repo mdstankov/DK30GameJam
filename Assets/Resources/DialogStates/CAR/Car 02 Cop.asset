@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Car 02 Cop
   m_EditorClassIdentifier: 
   stateText: Might not be the best idea to look for your bombs next to a cop.
-  Sound: {fileID: 0}
+  SoundClip: {fileID: 0}
   StoryFlags: 
   ObjectFlags: 
-  Special: 3
+  Special: 0
   responces:
   - ResponceText: Leave
     NextState: {fileID: 0}

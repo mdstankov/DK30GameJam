@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateText: '"Hello, this is The Good Smelling Police department how can we be of
     assistance" An overly chirpy lass answers the phone. '
-  Sound: {fileID: 0}
+  SoundClip: {fileID: 8300000, guid: 6c375db3a17048f4b94cf6a4de0a8c2c, type: 3}
   StoryFlags: 
   ObjectFlags: 
   Special: 0

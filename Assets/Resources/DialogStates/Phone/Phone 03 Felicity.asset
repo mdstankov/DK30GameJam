@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Phone 03 Felicity
   m_EditorClassIdentifier: 
   stateText: Several moments pass before you realize... She is not real.
-  Sound: {fileID: 0}
-  StoryFlags: 
+  SoundClip: {fileID: 0}
+  StoryFlags: 00010000
   ObjectFlags: 
   Special: 0
   responces:

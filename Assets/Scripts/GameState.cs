@@ -146,7 +146,16 @@ public class GameState : MonoBehaviour
         if (e == SpecialEvent.Spawn_Cop)
         {
             //TODO;
-            SetStoryFlag(StoryFlag.police_at_car);
+			if( HasStoryFlag ( StoryFlag.police_at_car ) == false )
+			{ 
+				 SetStoryFlag(StoryFlag.police_at_car);
+			}
+           
+			if( CopObject )
+			{
+				Debug.Log( "Cop already spawned" );
+				return;
+			}
 
 			if( CopPrefab && m_CorrectCar )
 			{

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateText: "\"Yeah, I need to finish of some things first, please come back later...\"
     She turns around. \n"
-  Sound: {fileID: 0}
+  SoundClip: {fileID: 8300000, guid: a33661c1130a0f640b3f686ecdaff717, type: 3}
   StoryFlags: 
   ObjectFlags: 
   Special: 0
@@ -23,7 +23,7 @@ MonoBehaviour:
     NextState: {fileID: 11400000, guid: b336a48bc2c666d408f3843d5e7043fe, type: 2}
     RequiresStory: []
     RequiresObject: []
-    TimeCost: 20
+    TimeCost: 15
     ReplaceStartState: {fileID: 0}
     EndDialog: 0
   hideMissingRequirements: 0

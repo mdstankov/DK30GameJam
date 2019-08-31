@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a503e4ae60021674ba89b0d34cf9c2bd, type: 3}
   m_Name: Civilian 01
   m_EditorClassIdentifier: 
-  stateText: '"CLEM?" ( No seriously go play Warframe )
+  stateText: '"CLEM?" ( No seriously, go play Warframe )
 
 '
-  Sound: {fileID: 0}
+  SoundClip: {fileID: 8300000, guid: 0cd5d500b25a06248bbc0bb082ba35cb, type: 3}
   StoryFlags: 
   ObjectFlags: 
   Special: 0

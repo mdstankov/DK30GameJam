@@ -17,7 +17,7 @@ MonoBehaviour:
     decide it''s best to leave.. and maybe just change your name and move out of here...
 
 '
-  Sound: {fileID: 0}
+  SoundClip: {fileID: 8300000, guid: 018943b52bc8b9e4d9cf1184104564b7, type: 3}
   StoryFlags: 
   ObjectFlags: 
   Special: 0

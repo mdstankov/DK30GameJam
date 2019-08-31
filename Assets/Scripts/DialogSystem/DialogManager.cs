@@ -23,7 +23,9 @@ public class DialogManager : MonoBehaviour
 	private PlayerController m_Player = null;
 	private SaveDialogProgress m_Save = null;
 
-	private int m_TotalDialogsIngame = 0;
+	private int m_TotalDialogsIngame = 50;
+	private List<DialogResponceStruct> m_ButtonRespooncesMap =  new List<DialogResponceStruct>();
+
 
 	private void Awake()
 	{
@@ -41,8 +43,47 @@ public class DialogManager : MonoBehaviour
 		gameObject.SetActive( false );
 		m_GameState = (GameState)FindObjectOfType(typeof(GameState)); //TODO: Double Dependancy
     }
+
+	private void Update()
+	{
+		if( m_CurrentInteraction && m_CurrentState )
+		{
+			if (Input.GetKeyDown("1") )
+			{
+				PickDialogOption( 0 );
+			}
+			else if (Input.GetKeyDown("2") )
+			{
+				PickDialogOption( 1 );
+			} 
+			if (Input.GetKeyDown("3") )
+			{
+				PickDialogOption( 2 );
+			}
+			if (Input.GetKeyDown("4") )
+			{
+				PickDialogOption( 3 );			   
+			}
+			if (Input.GetKeyDown("5") )
+			{
+				PickDialogOption( 4 );
+			}
+		}		
+	}
+
+
+	void PickDialogOption( int option_id )
+	{
+		if( m_ButtonRespooncesMap.Count <= option_id )
+		{
+			return;
+		}
+		DialogResponceStruct picked_responce = m_ButtonRespooncesMap[ option_id ];
+		m_ButtonRespooncesMap.Clear( );
+		OnResponceButtonClicked( picked_responce );
+	}
 	
-    public void StartConversation( Dialog_State state , InteractableObject intercation_object )
+	public void StartConversation( Dialog_State state , InteractableObject intercation_object )
     {
 		Debug.Log( "Start Conversation called" );
 		gameObject.SetActive( true );
@@ -103,6 +144,8 @@ public class DialogManager : MonoBehaviour
 		}
 		
 		///////////////////////////////////////
+		m_ButtonRespooncesMap.Clear( );
+
         DialogResponceStruct[] stateResponces = m_CurrentState.GetAllResponces( );
 		int btn_id = 0;
 
@@ -122,7 +165,7 @@ public class DialogManager : MonoBehaviour
 				}
 				else
 				{
-					text_component.text = ( 1 + btn_id ).ToString( ) + ". <Missing Requirements>";
+					text_component.text = ( 1 + btn_id ).ToString( ) + ". <Missing Information>";
 				}				
 			}
 			else
@@ -136,6 +179,7 @@ public class DialogManager : MonoBehaviour
 				
 				text_component.text = responce_string;				
 				btn.onClick.AddListener( ( ) => { OnResponceButtonClicked( responce ); } );
+				m_ButtonRespooncesMap.Add( responce );
 			}
 			btn_id++;
         }
@@ -202,7 +246,7 @@ public class DialogManager : MonoBehaviour
 	void CheckInitialSaveData( )
 	{
 		//VERY HORRIBLE PRACTICE DONT DO IN REAL LIFE :D
-		m_TotalDialogsIngame = Resources.LoadAll("DialogStates", typeof(Dialog_State)).Length;
+		//m_TotalDialogsIngame = Resources.LoadAll("DialogStates", typeof(Dialog_State)).Length;
 
 		//Check for save game file exists
 

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a503e4ae60021674ba89b0d34cf9c2bd, type: 3}
   m_Name: Police Officer 01
   m_EditorClassIdentifier: 
-  stateText: '"Good day, sir. We found your vehicle, there appears to be no damage.
-    Would you check if everything inside is intact." It might not be the best idea
-    to play with your bombs in front of her. "Oh yeah, and there is little paperwork
+  stateText: '"Good day, sir. We found your vehicle, there appears to be no damage,
+    eh. Would you check if everything inside is intact." It might not be the best
+    idea to play with your bombs in front of her. "Oh yeah, and there is little paperwork
     we must do, but it will only take 5 minutes"'
-  Sound: {fileID: 0}
+  SoundClip: {fileID: 8300000, guid: ebaf885bfb077424aae114bf33327b31, type: 3}
   StoryFlags: 
   ObjectFlags: 
   Special: 0

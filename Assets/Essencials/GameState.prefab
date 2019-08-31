@@ -45,5 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CopPrefab: {fileID: 1039730674243115649, guid: 15d9bcf74a022924d8f9a189e1881bdd,
     type: 3}
+  GameWinSound: {fileID: 8300000, guid: 9819b10555e725848bece263723bea7d, type: 3}
+  GameLoseSound: {fileID: 8300000, guid: 438f80180b84e2b43baeb4a8dfe78deb, type: 3}
+  LevelTimer: 540
   DialogPrefab: {fileID: 2747800763898967481, guid: 0732599f638d4424590d12d26c077935,
     type: 3}

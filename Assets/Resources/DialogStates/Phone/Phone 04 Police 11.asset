@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateText: '"Yeah.. can''t help you there buddy, go find your car color than we
     can talk". With still cherpy tone, she hang up the phone. '
-  Sound: {fileID: 0}
+  SoundClip: {fileID: 8300000, guid: d44eee2fa873f264988eeca049521318, type: 3}
   StoryFlags: 
   ObjectFlags: 
   Special: 0

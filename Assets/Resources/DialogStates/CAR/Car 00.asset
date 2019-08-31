@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Car 00
   m_EditorClassIdentifier: 
   stateText: This appears to be a car.
-  SoundClip: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
+  SoundClip: {fileID: 0}
   StoryFlags: 
   ObjectFlags: 
   Special: 0
